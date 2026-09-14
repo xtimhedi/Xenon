@@ -1,5 +1,5 @@
-﻿using Veldrid;
-using Veldrid.Sdl2;
+﻿using NeoVeldrid;
+using NeoVeldrid.Sdl2;
 using Xenon.NodeSystem;
 
 namespace Xenon.Context

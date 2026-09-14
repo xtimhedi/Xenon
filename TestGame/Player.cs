@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
-using Veldrid;
-using Veldrid.Sdl2;
+using NeoVeldrid;
+using NeoVeldrid.Sdl2;
 using Vortice.Mathematics;
 using Xenon.Context;
 using Xenon.NodeSystem;

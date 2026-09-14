@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using Veldrid;
-using Veldrid.ImageSharp;
+using NeoVeldrid;
+using NeoVeldrid.ImageSharp;
 
 namespace Xenon.Assets
 {
@@ -15,13 +15,13 @@ namespace Xenon.Assets
     {
         public object Load(string filePath)
         {
-            return Xenon.Context.Mesh.LoadFromObj(filePath, Veldrid.RgbaFloat.White);
+            return Xenon.Context.Mesh.LoadFromObj(filePath, RgbaFloat.White);
         }
 
         public object Load(Stream stream)
         {
             // Assumes your Mesh class has a stream-based overload
-            return Xenon.Context.Mesh.LoadFromObj(stream, Veldrid.RgbaFloat.White);
+            return Xenon.Context.Mesh.LoadFromObj(stream, RgbaFloat.White);
         }
     }
 

@@ -154,11 +154,11 @@ namespace Xenon.ContentSystem.Classes
                     return Content.Load<Mesh>(rawVal);
                 }
 
-                if (typeof(Veldrid.Texture).IsAssignableFrom(targetType))
+                if (typeof(NeoVeldrid.Texture).IsAssignableFrom(targetType))
                 {
-                    return Content.Load<Veldrid.Texture>(rawVal);
+                    return Content.Load<NeoVeldrid.Texture>(rawVal);
                 }
-            }
+            }   
             catch (Exception ex)
             {
                 XEN.Logger.LogError($"Failed to load asset '{rawVal}' for type '{targetType.Name}': {ex.Message}", "SceneLoader");

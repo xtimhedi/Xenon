@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Numerics;
 using System.Text;
-using Veldrid;
-using Veldrid.Sdl2;
-using Veldrid.SPIRV;
-using Veldrid.StartupUtilities;
+using NeoVeldrid;
+using NeoVeldrid.Sdl2;
+using NeoVeldrid.SPIRV;
+using NeoVeldrid.StartupUtilities;
 using ImGuiNET;      // Added
 using Xenon.Assets;
 using Xenon.ContentSystem;
@@ -272,7 +272,7 @@ void main()
             XEN.Logger.Log($"Title: {windowCI.WindowTitle}", "WindowInfo");
 
             XEN.Logger.Log("Created Window", "Engine");
-            window = VeldridStartup.CreateWindow(ref windowCI);
+            window = NeoVeldridStartup.CreateWindow(ref windowCI);
             XEN.Logger.Log("Context started", "SDL2");
             GraphicsDeviceOptions options = new GraphicsDeviceOptions
             {
@@ -280,7 +280,7 @@ void main()
                 PreferDepthRangeZeroToOne = true,
                 SwapchainDepthFormat = PixelFormat.R16_UNorm
             };
-            _graphicsDevice = VeldridStartup.CreateGraphicsDevice(window, options);
+            _graphicsDevice = NeoVeldridStartup.CreateGraphicsDevice(window, options);
             XEN.Logger.Log("Created GPU Context", "Engine");
 
             // Added: Forward Window Resizes to ImGui and Veldrid Swapchain
@@ -347,7 +347,7 @@ void main()
                 float deltaTime = (float)(currentTime - previousTime);
                 previousTime = currentTime;
 
-                InputSnapshot ss = window.PumpEvents();
+                NeoVeldrid.InputSnapshot ss = window.PumpEvents();
 
                 // Added: Feed input to ImGui
                 _imGuiRenderer.Update(deltaTime, ss);

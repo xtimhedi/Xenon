@@ -3,7 +3,6 @@ using System.IO;
 using System.Collections.Generic;
 using ImGuiNET;
 
-
 namespace Xenon.ImGuiCtx
 {
     public class ImGuiFilePicker
@@ -109,64 +108,81 @@ namespace Xenon.ImGuiCtx
                     Refresh();
                 }
 
-                // --- CENTRAL PANEL: Columns Fallback View ---
+                // --- CENTRAL PANEL: Modern Table View ---
                 System.Numerics.Vector2 childSize = new System.Numerics.Vector2(0, ImGui.GetWindowHeight() - 110);
 
-                if (ImGui.BeginChild("FileView", childSize, true))
+                if (ImGui.BeginChild("FileView", childSize, ImGuiChildFlags.Borders))
                 {
-                    ImGui.Columns(2, "FileColumns", true);
-                    ImGui.SetColumnWidth(0, ImGui.GetWindowWidth() - 120);
-
-                    // Render Folder Entry Items
-                    foreach (var dir in _directories)
+                    if (ImGui.BeginTable("FileTable", 2, ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.Resizable))
                     {
-                        string dirName = Path.GetFileName(dir);
-                        bool isSelected = (SelectedPath == dir);
+                        // Setup dynamic stretching to recreate the older ImGui.SetColumnWidth behavior
+                        ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
+                        ImGui.TableSetupColumn("Type", ImGuiTableColumnFlags.WidthFixed, 100f);
 
-                        if (ImGui.Selectable($"[Dir] {dirName}##{dir}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                        bool directoryChanged = false;
+
+                        // Render Folder Entry Items
+                        foreach (var dir in _directories)
                         {
-                            SelectedPath = dir;
+                            ImGui.TableNextRow();
+                            ImGui.TableNextColumn();
 
-                            // FIX: Pass 0 directly. Older ImGui.NET expects an int, not an enum.
-                            if (ImGui.IsMouseDoubleClicked(0))
+                            string dirName = Path.GetFileName(dir);
+                            bool isSelected = (SelectedPath == dir);
+
+                            // SpanAllColumns improves UX by allowing row-wide selection clicks
+                            if (ImGui.Selectable($"[Dir] {dirName}##{dir}", isSelected, ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.SpanAllColumns))
                             {
-                                _currentDirectory = dir;
-                                SelectedPath = string.Empty;
-                                _searchQuery = "";
-                                Refresh();
-                                break;
+                                SelectedPath = dir;
+
+                                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                                {
+                                    _currentDirectory = dir;
+                                    SelectedPath = string.Empty;
+                                    _searchQuery = "";
+                                    directoryChanged = true;
+                                }
+                            }
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text("Folder");
+                        }
+
+                        // Render File Entry Items
+                        if (!directoryChanged) // Prevent rendering files from a newly loaded directory in the same frame
+                        {
+                            foreach (var file in _files)
+                            {
+                                ImGui.TableNextRow();
+                                ImGui.TableNextColumn();
+
+                                string fileName = Path.GetFileName(file);
+                                bool isSelected = (SelectedPath == file);
+
+                                if (ImGui.Selectable($"[File] {fileName}##{file}", isSelected, ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.SpanAllColumns))
+                                {
+                                    SelectedPath = file;
+
+                                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                                    {
+                                        result = true;
+                                        isOpen = false;
+                                    }
+                                }
+
+                                ImGui.TableNextColumn();
+                                ImGui.Text(Path.GetExtension(file).ToLower());
                             }
                         }
 
-                        ImGui.NextColumn();
-                        ImGui.Text("Folder");
-                        ImGui.NextColumn();
-                    }
+                        ImGui.EndTable();
 
-                    // Render File Entry Items
-                    foreach (var file in _files)
-                    {
-                        string fileName = Path.GetFileName(file);
-                        bool isSelected = (SelectedPath == file);
-
-                        if (ImGui.Selectable($"[File] {fileName}##{file}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                        // Fire the refresh loop safely outside the table rendering cycle
+                        if (directoryChanged)
                         {
-                            SelectedPath = file;
-
-                            // FIX: Pass 0 directly. Older ImGui.NET expects an int, not an enum.
-                            if (ImGui.IsMouseDoubleClicked(0))
-                            {
-                                result = true;
-                                isOpen = false;
-                            }
+                            Refresh();
                         }
-
-                        ImGui.NextColumn();
-                        ImGui.Text(Path.GetExtension(file).ToLower());
-                        ImGui.NextColumn();
                     }
-
-                    ImGui.Columns(1); // Reset layout scope
                     ImGui.EndChild();
                 }
 
@@ -179,14 +195,14 @@ namespace Xenon.ImGuiCtx
                 {
                     isOpen = false;
                 }
+
                 ImGui.SameLine();
 
                 bool canOpen = !string.IsNullOrEmpty(SelectedPath) && !Directory.Exists(SelectedPath);
 
+                // Modern visual dimming + widget interaction blocking 
                 if (!canOpen)
-                {
-                    ImGui.PushStyleVar(ImGuiStyleVar.Alpha, 0.5f);
-                }
+                    ImGui.BeginDisabled();
 
                 if (ImGui.Button("Open") && canOpen)
                 {
@@ -195,9 +211,7 @@ namespace Xenon.ImGuiCtx
                 }
 
                 if (!canOpen)
-                {
-                    ImGui.PopStyleVar();
-                }
+                    ImGui.EndDisabled();
 
                 ImGui.End();
             }
