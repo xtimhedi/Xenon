@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="10.568828mm"
+   height="4.7301354mm"
+   viewBox="0 0 10.568828 4.7301354"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="xenon_poweredBy.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="98.293153"
+     inkscape:cx="4.5476209"
+     inkscape:cy="6.1855783"
+     inkscape:window-width="1835"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-95.249997,-59.531249)">
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.264583"
+       x="99.384567"
+       y="67.073151"
+       id="text1"><tspan
+         id="tspan1"
+         style="stroke-width:0.264583"
+         x="99.384567"
+         y="67.073151"
+         sodipodi:role="line" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#4897e5;fill-opacity:1;stroke-width:0.264583"
+       x="95.144577"
+       y="64.213326"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#4897e5;fill-opacity:1;stroke-width:0.264583"
+         x="95.144577"
+         y="64.213326">Xe<tspan
+   style="fill:#ffffff;fill-opacity:1"
+   id="tspan3">non</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:0.705556px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+       x="104.58617"
+       y="62.288616"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="104.58617"
+         y="62.288616">54</tspan></text>
+    <path
+       style="fill:#d6d23d;fill-opacity:1;stroke:none;stroke-width:0.0799999;stroke-dasharray:none;stroke-opacity:1"
+       d="m 95.63587,61.203355 0.444336,-1.672106"
+       id="path10" />
+    <path
+       sodipodi:type="star"
+       style="fill:#d6d23d;fill-opacity:1;stroke:none;stroke-width:0.0799999;stroke-dasharray:none;stroke-opacity:1"
+       id="path11"
+       inkscape:flatsided="false"
+       sodipodi:sides="5"
+       sodipodi:cx="9.635066"
+       sodipodi:cy="0.33909822"
+       sodipodi:r1="0.83275473"
+       sodipodi:r2="0.4163774"
+       sodipodi:arg1="-0.90482709"
+       sodipodi:arg2="-0.27650856"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 10.14956,-0.3157121 10.035627,0.22542781 10.416815,0.6260634 9.8669532,0.68492835 9.6037196,1.1712628 9.3778191,0.6665034 8.8339439,0.56643901 9.2441915,0.19561561 9.1712917,-0.352562 9.6507392,-0.07698409 Z"
+       inkscape:transform-center-x="0.0096865697"
+       inkscape:transform-center-y="0.070252171"
+       transform="translate(95.40201,61.635997)" />
+    <text
+       xml:space="preserve"
+       style="font-size:0.705556px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ff7b7b;fill-opacity:1;stroke-width:0.0799999"
+       x="95.212318"
+       y="61.648727"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="fill:#ff7b7b;fill-opacity:1;stroke-width:0.08"
+         x="95.212318"
+         y="61.648727">Powered By</tspan></text>
+  </g>
+</svg>

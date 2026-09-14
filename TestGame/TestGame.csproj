@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Xenon\Xenon.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Include="EmbeddedResources\**" />
+  </ItemGroup>
+
+    <ItemGroup>
+        <!-- prevent trimming from touching the reflection-heavy graphics assemblies -->
+        <TrimmerRootAssembly Include="Veldrid" />
+        <TrimmerRootAssembly Include="Veldrid.StartupUtilities" />
+        <TrimmerRootAssembly Include="Vortice.DXGI" />
+        <TrimmerRootAssembly Include="Vortice.Mathematics" />
+        <TrimmerRootAssembly Include="SharpGen.Runtime" />
+	    <TrimmerRootAssembly Include="Xenon" />
+		<TrimmerRootAssembly Include="TestGame" />
+	</ItemGroup>
+
+</Project>

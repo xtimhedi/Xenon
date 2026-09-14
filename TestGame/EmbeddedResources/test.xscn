@@ -1,0 +1,72 @@
+{
+  "format": {
+    "xenon_version": "4.0",
+    "xenon_editor": "true",
+    "xenon_window_title": "Xenon Window"
+  },
+  "scene_data": [
+    {
+      "name": "root",
+      "type": "Xenon.NodeSystem.SceneTree",
+      "properties": {},
+      "children": [
+        {
+          "name": "MainCamera",
+          "type": "TestGame.Player",
+          "properties": {
+            "Position": "0, 0, 5",
+            "Rotation": "0, 0, 0"
+          },
+          "children": [
+            {
+              "name": "MainCamera",
+              "type": "TestGame.Camera",
+              "properties": {
+                "Position": "0, 0, 0"
+              },
+              "children": [
+                {
+                  "name": "WeaponRender",
+                  "type": "Xenon.NodeSystem.MeshInstance3D",
+                  "properties": {
+                    "Position": "0, -0.6, -0.8",
+                    "Scale": "0.5,0.5,0.5",
+                    "Mesh": "emb.TestGame.EmbeddedResources.Pistol.obj",
+                    "Texture": "emb.TestGame.EmbeddedResources.Pistol.png"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MeshInstance_000",
+          "type": "TestGame.MovableCube",
+          "properties": {
+            "Position": "0, -2, 0",
+            "Rotation": "0, 0, 0",
+            "Scale": "100, 0.4, 100",
+            "Mesh": "emb.TestGame.EmbeddedResources.Cube.obj",
+            "Texture": "emb.TestGame.EmbeddedResources.crate.jpg"
+          },
+          "children": [
+          ]
+        },
+        {
+          "name": "MeshInstance_001",
+          "type": "TestGame.MovableCube",
+          "properties": {
+            "Position": "0, -1, 4",
+            "Rotation": "0, 0, 0",
+            "Scale": "8, 8, 1",
+            "Mesh": "emb.TestGame.EmbeddedResources.Cube.obj",
+            "Texture": "emb.TestGame.EmbeddedResources.crate.jpg"
+          },
+          "children": [
+          ]
+        }
+
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>XenonEngine</PackageId>
+    <Title>Xenon</Title>
+    <Version></Version>
+    <Company></Company>
+    <Description>A simple, lightweight 2D/3D game engine, developed with Veldrid as a backend. </Description>
+    <Copyright>2026 Newertech LLC and Xenon contributors</Copyright>
+    <PackageProjectUrl>https://xenon3d.xyz</PackageProjectUrl>
+    <PackageIcon></PackageIcon>
+    <PackageTags>game-engine;graphics</PackageTags>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Marketing\xenon_poweredBy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Marketing\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLayer" Version="3.0.0" />
+    <PackageReference Include="Veldrid" Version="4.9.0" />
+    <PackageReference Include="Veldrid.ImageSharp" Version="4.9.0" />
+    <PackageReference Include="Veldrid.ImGui" Version="5.72.0" />
+    <PackageReference Include="Veldrid.SPIRV" Version="1.0.15" />
+    <PackageReference Include="Veldrid.StartupUtilities" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Marketing\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
