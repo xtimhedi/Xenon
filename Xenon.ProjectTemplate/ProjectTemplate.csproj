@@ -20,14 +20,12 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<!-- prevent trimming from touching the reflection-heavy graphics assemblies -->
 		<TrimmerRootAssembly Include="Veldrid" />
 		<TrimmerRootAssembly Include="Veldrid.StartupUtilities" />
 		<TrimmerRootAssembly Include="Vortice.DXGI" />
 		<TrimmerRootAssembly Include="Vortice.Mathematics" />
 		<TrimmerRootAssembly Include="SharpGen.Runtime" />
 		<TrimmerRootAssembly Include="Xenon" />
-		<!--Block from trimming the main project, replace this with your project name if needed-->
 		<TrimmerRootAssembly Include="ProjectTemplate" />
 	</ItemGroup>
 

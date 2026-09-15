@@ -24,7 +24,7 @@ namespace Xenon
         private static Shader[] _shaders;
 
         // Added ImGuiRenderer
-        private static ImGuiRenderer _imGuiRenderer;
+        private static Xenon.ImGuiCtx.ImGuiRenderer _imGuiRenderer;
 
         public static RenderContext _renderContext;
         private static Node _sceneRoot;
@@ -151,8 +151,7 @@ void main()
             _pipeline2D = factory.CreateGraphicsPipeline(pipeline2DDescription);
             _commandList = factory.CreateCommandList();
 
-            // Added: Initialize ImGui Renderer
-            _imGuiRenderer = new ImGuiRenderer(
+            _imGuiRenderer = new Xenon.ImGuiCtx.ImGuiRenderer(
                 _graphicsDevice,
                 _graphicsDevice.SwapchainFramebuffer.OutputDescription,
                 window.Width,
@@ -250,6 +249,7 @@ void main()
                 XEN.Logger.LogWarn("No scene set. Creating default root node.", "SceneBuilder");
                 _sceneRoot = new Node { Name = "Root" };
             }
+            BuildExternalTree(_sceneRoot);
 
             _sceneRoot.Ready(_renderContext);
         }
@@ -309,6 +309,11 @@ void main()
             
         }
 
+        public virtual void BuildExternalTree(Node treeRoot)
+        {
+
+        }
+
         public static bool hasInited = false;
 
         public void StartRenderLoop()
@@ -334,7 +339,7 @@ void main()
                 Scale = new Vector2(320, 143)
             };
             _sceneRoot.AddChild(logoSprite);
-            _sceneRoot.AddChild(NoSceneSprite);
+
 
             Stopwatch frameStopwatch = Stopwatch.StartNew();
             double lastFrameTime = 0.0;

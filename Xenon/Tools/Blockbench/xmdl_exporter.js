@@ -1,5 +1,5 @@
 (function() {
-    var exportAction = new Action('xmdl_export_text', {
+    var exportAction = new Action('xmdl_exporter', {
         name: 'Export Xenon Model (Text/OBJ)',
         icon: 'icon-objects',
         category: 'file',
@@ -60,7 +60,7 @@
         }
     });
 
-    Plugin.register('xmdl_exporter', {
+    Plugin.register('xmdl_text_exporter', {
         title: 'XenonEngine Text format exporter',
         author: 'Newertech LLC',
         icon: 'text_snippet',

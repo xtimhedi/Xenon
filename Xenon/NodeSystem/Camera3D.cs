@@ -8,7 +8,7 @@ namespace Xenon.NodeSystem
         public float FieldOfView { get; set; } = 1.05f; // ~60 degrees
         public float AspectRatio { get; set; } = 16f / 9f;
         public float NearPlane { get; set; } = 0.1f;
-        public float FarPlane { get; set; } = 100f;
+        public float FarPlane { get; set; } = 99999999f;
         public override void Ready(RenderContext context)
         {
             base.Ready(context);

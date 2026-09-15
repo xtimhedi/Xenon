@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CS-Script" Version="4.14.11" />
     <PackageReference Include="NLayer" Version="3.0.0" />
     <PackageReference Include="NeoVeldrid" Version="1.2.1" />
     <PackageReference Include="NeoVeldrid.ImageSharp" Version="1.2.1" />

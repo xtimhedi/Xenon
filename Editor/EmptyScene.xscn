@@ -1,0 +1,17 @@
+{
+	// basic formatting shit
+	"format": {
+		"xenon_version": "4.0", // minimum editor version, NOT what is displayed in the startup message, the actual internal one
+		"xenon_editor": "true", // Was this built with the editor?
+		"xenon_window_title": "Xenon Window" // unused for now
+	},
+	"scene_data": [
+		{ // create the scene root
+			"name": "root",
+			"type": "Xenon.NodeSystem.SceneTree", // types use the actual reflection type
+			"properties": {},
+			"children": [
+			]
+		}
+	]
+}

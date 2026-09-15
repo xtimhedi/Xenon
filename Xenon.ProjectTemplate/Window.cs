@@ -71,7 +71,7 @@ namespace ProjectTemplate
 
                 ImGui.SameLine(ImGui.GetWindowWidth() - tw - padding);
                 ImGui.TextUnformatted(text);
-
+    
                 ImGui.EndMainMenuBar();
             }
             HandleFilePicker();

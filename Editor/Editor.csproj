@@ -5,10 +5,29 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EmptyScene.xscn" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmptyScene.xscn" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ImGuiColorTextEditNet" Version="0.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Xenon\Xenon.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="imgui.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
