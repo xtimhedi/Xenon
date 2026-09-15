@@ -34,6 +34,7 @@
     <PackageReference Include="NeoVeldrid.ImGui" Version="1.2.1" />
     <PackageReference Include="NeoVeldrid.SPIRV" Version="1.2.1" />
     <PackageReference Include="NeoVeldrid.StartupUtilities" Version="1.2.1" />
+    <PackageReference Include="Vortice.Mathematics" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
