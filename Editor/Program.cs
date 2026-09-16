@@ -33,7 +33,7 @@ public class Program : XenonWindow
         Globals.program.NewWindow(new Editor.Windows.TreeWindow("Tree"));
         Globals.program.NewWindow(new Editor.Windows.NullWindow("Filesystem"));
         Globals.program.NewWindow(new Editor.Windows.NullWindow("2"));
-        Globals.program.NewWindow(new Editor.Windows.NullWindow("3"));
+        Globals.program.NewWindow(new Editor.Windows.PropertiesWindow("3"));
         Globals.program.NewWindow(new Editor.Windows.LogWindow("Engine Log"));
 
         // Create the SDL2 Window CreateInfo
