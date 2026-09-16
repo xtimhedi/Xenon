@@ -15,6 +15,8 @@ namespace Editor
         public float PanSpeed { get; set; } = 0.02f;
         public float ZoomSpeed { get; set; } = 2.0f;
 
+        public int TestProp { get; set; } = 32;
+
         // Camera State
         private float _yaw = 0f;
         private float _pitch = 0f;

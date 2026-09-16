@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Cube.xmdl" />
     <None Remove="EmptyScene.xscn" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Cube.xmdl" />
     <EmbeddedResource Include="EmptyScene.xscn" />
   </ItemGroup>
 

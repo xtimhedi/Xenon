@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xenon.NodeSystem;
 
 namespace Editor.ProjectSystem
 {
@@ -10,6 +11,17 @@ namespace Editor.ProjectSystem
         public List<ImTreeNode> Children = new List<ImTreeNode>();
         public int id = 0;
         public string name = "";
+
+        public Node ReferenceNode;
+
+        public void CascadeAction(Action<ImTreeNode> callable)
+        {
+            callable(this);
+            foreach (ImTreeNode child in Children)
+            {
+                child.CascadeAction(callable);
+            }
+        }
 
         public void Render()
         {
